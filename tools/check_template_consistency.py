@@ -16,6 +16,18 @@ LECTURE_TITLES = [
     "9. 课堂讨论题",
 ]
 
+LECTURE_TITLES_EN = [
+    "1. Paper Overview Card",
+    "2. Research Logic & Storyline",
+    "3. Introduction Guide",
+    "4. Abstract Deep Dive",
+    "5. Figure-by-Figure Analysis & Logic Chain",
+    "6. Core Methods Deep Dive",
+    "7. Methods Critique",
+    "8. Discussion Guide",
+    "9. Discussion Questions",
+]
+
 LECTURE_BLOCKS = [
     'class="figure-section"',
     'class="logic-box"',
@@ -89,6 +101,37 @@ def check_lecture(content: str) -> tuple[bool, list[str]]:
     return (len(issues) == 0, issues)
 
 
+def check_lecture_en(content: str) -> tuple[bool, list[str]]:
+    issues = []
+
+    missing_titles = find_missing(content, LECTURE_TITLES_EN)
+    if missing_titles:
+        issues.append(f"Missing section titles: {', '.join(missing_titles)}")
+
+    card_count = len(re.findall(r'<section\s+class="card"', content))
+    if card_count < 9:
+        issues.append(f"section.card count too low: {card_count} < 9")
+
+    missing_blocks = find_missing(content, LECTURE_BLOCKS)
+    if missing_blocks:
+        issues.append(f"Missing figure blocks: {', '.join(missing_blocks)}")
+
+    fig_count = len(re.findall(r'class="figure-section"', content))
+    if fig_count < 1:
+        issues.append("figure-section count too low")
+
+    quote_count = len(re.findall(r'class="quote-box"', content))
+    if quote_count < fig_count:
+        issues.append(
+            f"quote-box count too low: {quote_count} < figure-section({fig_count})"
+        )
+
+    if "Quoted Results text" not in content and "Results" not in content:
+        issues.append("Missing Results quote marker")
+
+    return (len(issues) == 0, issues)
+
+
 def check_biblio(content: str) -> tuple[bool, list[str]]:
     issues = []
 
@@ -118,7 +161,9 @@ def main() -> int:
         description="Check HTML consistency against skill templates"
     )
     parser.add_argument("html", type=Path, help="Path to generated HTML")
-    parser.add_argument("--mode", choices=["lecture", "biblio", "auto"], default="auto")
+    parser.add_argument(
+        "--mode", choices=["lecture", "lecture-en", "biblio", "auto"], default="auto"
+    )
     args = parser.parse_args()
 
     if not args.html.exists():
@@ -130,6 +175,8 @@ def main() -> int:
 
     if mode == "lecture":
         ok, issues = check_lecture(content)
+    elif mode == "lecture-en":
+        ok, issues = check_lecture_en(content)
     else:
         ok, issues = check_biblio(content)
 

@@ -1,5 +1,7 @@
 # paper-fastread
 
+[English README](./README.en.md) | [中文说明](./README.md)
+
 `paper-fastread` 是一个面向**文献推送后深度解读**场景的技能仓库。它的目标不是重复“给链接”，而是把每日推送论文进一步转化为：
 
 - 可讲授的 9 章节中文讲义（HTML）
@@ -178,7 +180,7 @@ Blood metabolites mediate causal inference studies on the effect of gut microbio
 
 ### Figure 精读模块（logic/caption/quote/steps/results）
 
-![Figure module](assets/screenshots/2026-03-09_114856.png)
+![Figure module](assets/screenshots/demo-figure-module.png)
 
 ---
 
@@ -217,8 +219,12 @@ paper-fastread/
 
 - 技能入口：`SKILL.md`
 - 文献源配置：`references/literature-source-setup.md`
+- 文献源配置（EN）：`references/literature-source-setup-en.md`
 - MCP 搜索与取图流程：`references/paper-distill-mcp-workflow.md`
+- MCP 搜索与取图流程（EN）：`references/paper-distill-mcp-workflow-en.md`
 - 单篇讲义规范：`references/single-paper-lecture-template-zh.md`
+- 单篇讲义规范（EN）：`references/single-paper-lecture-template-en.md`
 - 快速 prompts：`references/quick-prompts.md`
+- 快速 prompts（EN）：`references/quick-prompts-en.md`
 - PDF 导出：`references/html-to-pdf.md`
 - 发布清单：`GITHUB_RELEASE_CHECKLIST.md`

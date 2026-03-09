@@ -1,9 +1,18 @@
 ---
 name: paper-fastread
-description: 将单篇科研论文重构为9章节中文讲义并输出可投屏HTML。用于“逐图精读”“Results原文提取+中文推导”“方法学深挖”“讲课版论文导读”等场景；要求严格保留n值、P值、fold change、scale bar，并按Figure逻辑链条组织内容。
+description: 将单篇科研论文重构为9章节讲义并输出可投屏HTML（支持中文/英文）。用于“逐图精读”“Results原文提取+推导”“方法学深挖”“讲课版论文导读”等场景；要求严格保留n值、P值、fold change、scale bar，并按Figure逻辑链条组织内容。
 ---
 
 # Paper FastRead (Single Paper → Lecture, ZH)
+
+## Language mode (ZH / EN)
+
+- If user requests Chinese output, follow Chinese chapter titles and references under `*-zh.md`.
+- If user requests English output, follow English chapter titles and references under `*-en.md`.
+- Keep the same evidence rigor for both languages:
+  - Results quotes must be verbatim
+  - figure logic chain must be explicit
+  - quantitative details must be preserved (`n=`, `P<`, `fold`, `scale bar`)
 
 ## Session start (must prompt first)
 
@@ -63,17 +72,24 @@ Use this fixed startup prompt template (Chinese):
 
 - Primary specification and figure HTML template:
   - `references/single-paper-lecture-template-zh.md`
+  - `references/single-paper-lecture-template-en.md`
 - Delivery quality checklist:
   - `references/checklists/release-checklist.md`
 - Literature source setup and MCP workflow:
   - `references/literature-source-setup.md`
   - `references/paper-distill-mcp-workflow.md`
+  - `references/literature-source-setup-en.md`
+  - `references/paper-distill-mcp-workflow-en.md`
 - HTML to PDF export:
   - `references/html-to-pdf.md`
+ - Prompt packs:
+  - `references/quick-prompts.md`
+  - `references/quick-prompts-en.md`
 
 ## Template and validation tools
 
 - Canonical lecture template: `templates/lecture-template.html`
+- English lecture template: `templates/lecture-template-en.html`
 - Optional checks:
   - `tools/check_template_consistency.py`
   - `tools/check_template_consistency.sh`
