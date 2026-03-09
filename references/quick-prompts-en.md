@@ -22,6 +22,9 @@ Generate a full lecture HTML from templates/lecture-template-en.html with this p
 
 Input: {PDF/HTML/URL/PMID/DOI}
 Output filename: lecture_<topic>_<PMID>.html
+
+Validation step (recommended):
+bash tools/check_template_consistency.sh lecture_<topic>_<PMID>.html lecture-en
 ```
 
 ## Prompt 2: improve an existing lecture file
@@ -31,6 +34,9 @@ Enhance the existing lecture HTML without changing visual style:
 - deepen figure interpretation
 - fill missing quantitative details in caption translation
 - keep template block structure intact
+
+Validation step (recommended):
+bash tools/check_template_consistency.sh <existing_lecture.html> lecture-en
 ```
 
 ## Prompt 3: caption completeness repair

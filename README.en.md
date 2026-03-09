@@ -30,7 +30,7 @@ Compared with plain link push systems, `paper-fastread` helps you move from:
 
 - Fixed 9-section output structure
 - Mandatory figure block order:
-  `logic-box → caption-box → quote-box → steps-box → results-box`
+  `logic-box → image → caption-box → quote-box → steps-box → results-box`
 - Default source policy: **OpenAlex first**, PubMed cross-check for biomedical papers
 - Integrated `paper-distill-mcp` workflow
 - HTML to PDF export via `tools/html_to_pdf.sh`
@@ -169,7 +169,7 @@ Custom output path:
 bash tools/html_to_pdf.sh examples/Blood_metabolites_VC_PMID40139524_lecture_demo.html outputs/demo.pdf
 ```
 
-See: `references/html-to-pdf.md`
+See: `references/html-to-pdf-en.md`
 
 ---
 
@@ -180,3 +180,4 @@ See: `references/html-to-pdf.md`
 - MCP workflow: `references/paper-distill-mcp-workflow-en.md`
 - English lecture spec: `references/single-paper-lecture-template-en.md`
 - English prompts: `references/quick-prompts-en.md`
+- English PDF guide: `references/html-to-pdf-en.md`

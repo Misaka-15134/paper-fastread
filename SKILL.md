@@ -23,7 +23,8 @@ Before any paper processing, always ask the user to confirm literature source co
 3. MCP availability: confirm `paper-distill` MCP is connected.
 
 If not configured, stop generation and provide setup guidance from:
-- `references/literature-source-setup.md`
+- Chinese workflow: `references/literature-source-setup.md`
+- English workflow: `references/literature-source-setup-en.md`
 
 Use this fixed startup prompt template (Chinese):
 
@@ -34,6 +35,17 @@ Use this fixed startup prompt template (Chinese):
 3) MCP 连通性：请先运行 `opencode mcp list`，确认 paper-distill 为 connected。
 
 若未配置，我会先引导你完成配置，再开始论文检索与讲义生成。
+```
+
+Use this fixed startup prompt template (English):
+
+```text
+Before we start, please confirm your literature source setup:
+1) OpenAlex (default primary source): confirm OPENALEX_EMAIL is configured.
+2) PubMed (recommended for biomedical papers): configure NCBI_EMAIL / NCBI_API_KEY if available.
+3) MCP connectivity: run `opencode mcp list` (or your client equivalent) and confirm paper-distill is connected.
+
+If not configured, I will guide setup first, then proceed to paper retrieval and lecture generation.
 ```
 
 ## Literature source policy

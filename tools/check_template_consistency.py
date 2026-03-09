@@ -151,7 +151,10 @@ def check_biblio(content: str) -> tuple[bool, list[str]]:
 
 def infer_mode(path: Path) -> str:
     name = path.name
-    if "讲义" in name or "lecture" in name.lower():
+    lower_name = name.lower()
+    if "lecture-en" in lower_name:
+        return "lecture-en"
+    if "讲义" in name or "lecture" in lower_name:
         return "lecture"
     return "biblio"
 
