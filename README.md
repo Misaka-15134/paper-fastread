@@ -180,7 +180,7 @@ Blood metabolites mediate causal inference studies on the effect of gut microbio
 
 ### Figure 精读模块（logic/caption/quote/steps/results）
 
-![Figure module](assets/screenshots/demo-figure-module.png)
+![Figure module](assets/screenshots/2026-03-09_114856.png)
 
 ---
 
