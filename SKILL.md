@@ -39,6 +39,7 @@ Use this fixed startup prompt template (Chinese):
 2. Produce the fixed 9-chapter lecture structure in the exact required order.
 3. Build each Figure module with required HTML blocks and labels.
 4. Run quality-gate checklist before delivering final HTML.
+5. If user needs shareable handout, convert final HTML to PDF.
 
 ## Output contract (strict)
 
@@ -67,6 +68,8 @@ Use this fixed startup prompt template (Chinese):
 - Literature source setup and MCP workflow:
   - `references/literature-source-setup.md`
   - `references/paper-distill-mcp-workflow.md`
+- HTML to PDF export:
+  - `references/html-to-pdf.md`
 
 ## Template and validation tools
 
@@ -74,6 +77,7 @@ Use this fixed startup prompt template (Chinese):
 - Optional checks:
   - `tools/check_template_consistency.py`
   - `tools/check_template_consistency.sh`
+  - `tools/html_to_pdf.sh`
 
 ## Execution rules
 
