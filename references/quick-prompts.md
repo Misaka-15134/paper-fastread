@@ -1,12 +1,24 @@
 # 快速调用提示词
 
+## Prompt 0：先做文献源配置检查（必须）
+
+```text
+开始前先检查文献来源配置：
+- 默认主源：OpenAlex（确认 OPENALEX_EMAIL）
+- 医学交叉验证：PubMed（确认 NCBI_EMAIL / NCBI_API_KEY，如可用）
+- MCP：确认 paper-distill 已连接（opencode mcp list）
+
+若未配置，先给出配置步骤，再开始论文处理。
+```
+
 ## Prompt 1：单篇快速讲义（模板锚定）
 
 ```text
 请基于 templates/lecture-template.html 生成这篇论文的完整讲义HTML：
 - 必须保留模板主结构（9章节 + Figure完整结构）
-- Figure必须包含：caption-box + purpose-box + steps-box + results-box(panel-details)
+- Figure必须包含：logic-box + caption-box + quote-box + steps-box + results-box(panel-details)
 - 图注中文翻译必须完整包含 n值、P值、比例尺、剂量、时间点
+- 默认先用 OpenAlex 获取元数据，再用 PubMed（医学场景）交叉核验
 
 论文来源：{PDF/HTML/URL/PMID/DOI}
 输出文件名：讲义_<主题>_<PMID>.html

@@ -5,6 +5,34 @@ description: 将单篇科研论文重构为9章节中文讲义并输出可投屏
 
 # Paper FastRead (Single Paper → Lecture, ZH)
 
+## Session start (must prompt first)
+
+Before any paper processing, always ask the user to confirm literature source configuration:
+
+1. OpenAlex source (default): confirm `OPENALEX_EMAIL` is configured.
+2. PubMed source (optional but recommended for biomedical papers): confirm `NCBI_EMAIL` / `NCBI_API_KEY` if available.
+3. MCP availability: confirm `paper-distill` MCP is connected.
+
+If not configured, stop generation and provide setup guidance from:
+- `references/literature-source-setup.md`
+
+Use this fixed startup prompt template (Chinese):
+
+```text
+在开始前请先确认文献源配置：
+1) OpenAlex（默认主源）：请确认 OPENALEX_EMAIL 已配置；
+2) PubMed（医学论文推荐）：如可用请配置 NCBI_EMAIL / NCBI_API_KEY；
+3) MCP 连通性：请先运行 `opencode mcp list`，确认 paper-distill 为 connected。
+
+若未配置，我会先引导你完成配置，再开始论文检索与讲义生成。
+```
+
+## Literature source policy
+
+- Default source priority: **OpenAlex → PubMed → other sources**.
+- For biomedical/clinical papers, run PubMed cross-check after OpenAlex retrieval.
+- Keep metadata canonical: Title, Journal, DOI, PMID/PMCID (if present).
+
 ## Core workflow (must follow)
 
 1. Parse paper metadata and full-text sections: Introduction, Abstract, Results, Methods, Discussion, and figure captions.
@@ -36,6 +64,9 @@ description: 将单篇科研论文重构为9章节中文讲义并输出可投屏
   - `references/single-paper-lecture-template-zh.md`
 - Delivery quality checklist:
   - `references/checklists/release-checklist.md`
+- Literature source setup and MCP workflow:
+  - `references/literature-source-setup.md`
+  - `references/paper-distill-mcp-workflow.md`
 
 ## Template and validation tools
 
