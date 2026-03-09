@@ -1,5 +1,12 @@
 # 论文讲义制作最佳实践
 
+> ⚠️ 规范优先级说明
+>
+> 本文档包含历史版本实践（含 `purpose-box` 写法）。当前执行请以 `SKILL.md` 与 `single-paper-lecture-template-zh.md` 为最高优先级：
+> `logic-box → image → caption-box → quote-box → steps-box → results-box`。
+>
+> 使用旧片段时，请将 `purpose-box` 迁移为 `logic-box`，并补齐 `quote-box`（Results 连续原文）。
+
 本文档总结了从实际教学讲义制作中积累的经验教训和最佳实践。
 
 ---

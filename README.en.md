@@ -181,3 +181,5 @@ See: `references/html-to-pdf-en.md`
 - English lecture spec: `references/single-paper-lecture-template-en.md`
 - English prompts: `references/quick-prompts-en.md`
 - English PDF guide: `references/html-to-pdf-en.md`
+- Reliability protocol (ZH): `references/agent-reliability-protocol.md`
+- Reliability protocol (EN): `references/agent-reliability-protocol-en.md`

@@ -61,6 +61,7 @@ If not configured, I will guide setup first, then proceed to paper retrieval and
 3. Build each Figure module with required HTML blocks and labels.
 4. Run quality-gate checklist before delivering final HTML.
 5. If user needs shareable handout, convert final HTML to PDF.
+6. Enforce agent reliability protocol to prevent missing sections/images.
 
 ## Output contract (strict)
 
@@ -92,6 +93,9 @@ If not configured, I will guide setup first, then proceed to paper retrieval and
   - `references/paper-distill-mcp-workflow.md`
   - `references/literature-source-setup-en.md`
   - `references/paper-distill-mcp-workflow-en.md`
+ - Reliability protocol:
+  - `references/agent-reliability-protocol.md`
+  - `references/agent-reliability-protocol-en.md`
 - HTML to PDF export:
   - `references/html-to-pdf.md`
  - Prompt packs:
@@ -113,3 +117,11 @@ If not configured, I will guide setup first, then proceed to paper retrieval and
 - Keep story continuity explicit: explain why Figure B follows Figure A.
 - Do not fabricate unavailable evidence; clearly mark missing full-text dependencies.
 - Keep output reusable for teaching: structured, traceable, and citation-grounded.
+
+## Reliability rules for cross-agent usage (mandatory)
+
+1. Start from template file, never from blank output.
+2. Every figure-section must contain an image tag (`<img ...>`).
+3. If no valid source image can be resolved, use a placeholder image and log attempted sources in caption-box.
+4. Always run template checker before delivery.
+5. If checker fails, run self-repair loop up to 3 rounds; then deliver partial output with explicit missing list.

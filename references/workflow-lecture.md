@@ -21,10 +21,11 @@
    - 按 `template.md` 生成完整章节骨架
 
 5. **Figure深度填充（强制）**
-   - caption-box：英文原文+完整中文翻译
-   - purpose-box：实验目的
-   - steps-box：实验步骤
-   - results-box：核心发现+panel-details+逻辑链+机制意义
+    - caption-box：英文原文+完整中文翻译
+    - logic-box：承上启下逻辑链（为什么接着做这张图）
+    - quote-box：Results连续原文（3-5句）
+    - steps-box：实验步骤
+    - results-box：核心发现+panel-details+阶段小结
 
 6. **质量检查（硬门槛）**
    - 图注中文是否完整覆盖 `n/P/bar/剂量/时间点`

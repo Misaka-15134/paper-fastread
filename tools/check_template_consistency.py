@@ -84,6 +84,11 @@ def check_lecture(content: str) -> tuple[bool, list[str]]:
     if fig_count < 3:
         issues.append(f"figure-section 数量异常偏少: {fig_count}")
 
+    for block in ["logic-box", "caption-box", "quote-box", "steps-box", "results-box"]:
+        cnt = len(re.findall(rf'class="{block}"', content))
+        if cnt < fig_count:
+            issues.append(f"{block} 数量不足: {cnt} < figure-section({fig_count})")
+
     quote_count = len(re.findall(r'class="quote-box"', content))
     if quote_count < fig_count:
         issues.append(
@@ -97,6 +102,33 @@ def check_lecture(content: str) -> tuple[bool, list[str]]:
         if token not in content:
             issues.append(f"疑似缺少关键定量信息标记: {token}")
             break
+
+    img_tags = re.findall(r"<img\b[^>]*>", content, flags=re.IGNORECASE)
+    if len(img_tags) < fig_count:
+        issues.append(
+            f"图片标签不足: img({len(img_tags)}) < figure-section({fig_count})"
+        )
+    for tag in img_tags:
+        src_match = re.search(
+            r"\bsrc\s*=\s*['\"]([^'\"]*)['\"]", tag, flags=re.IGNORECASE
+        )
+        if not src_match:
+            issues.append("检测到缺少src属性的<img>标签")
+            continue
+        src = src_match.group(1).strip().lower()
+        if src in ["", "#", "javascript:void(0)"]:
+            issues.append(f"检测到无效图片src: {src or '<empty>'}")
+
+    sections = re.findall(
+        r'<section\s+class="card"[^>]*>(.*?)</section>',
+        content,
+        flags=re.IGNORECASE | re.DOTALL,
+    )
+    for idx, sec in enumerate(sections, 1):
+        text = re.sub(r"<[^>]+>", "", sec)
+        text = re.sub(r"\s+", "", text)
+        if len(text) < 12:
+            issues.append(f"第{idx}个section内容疑似为空")
 
     return (len(issues) == 0, issues)
 
@@ -120,6 +152,11 @@ def check_lecture_en(content: str) -> tuple[bool, list[str]]:
     if fig_count < 1:
         issues.append("figure-section count too low")
 
+    for block in ["logic-box", "caption-box", "quote-box", "steps-box", "results-box"]:
+        cnt = len(re.findall(rf'class="{block}"', content))
+        if cnt < fig_count:
+            issues.append(f"{block} count too low: {cnt} < figure-section({fig_count})")
+
     quote_count = len(re.findall(r'class="quote-box"', content))
     if quote_count < fig_count:
         issues.append(
@@ -128,6 +165,33 @@ def check_lecture_en(content: str) -> tuple[bool, list[str]]:
 
     if "Quoted Results text" not in content and "Results" not in content:
         issues.append("Missing Results quote marker")
+
+    img_tags = re.findall(r"<img\b[^>]*>", content, flags=re.IGNORECASE)
+    if len(img_tags) < fig_count:
+        issues.append(
+            f"img count too low: {len(img_tags)} < figure-section({fig_count})"
+        )
+    for tag in img_tags:
+        src_match = re.search(
+            r"\bsrc\s*=\s*['\"]([^'\"]*)['\"]", tag, flags=re.IGNORECASE
+        )
+        if not src_match:
+            issues.append("Detected <img> tag without src")
+            continue
+        src = src_match.group(1).strip().lower()
+        if src in ["", "#", "javascript:void(0)"]:
+            issues.append(f"Detected invalid image src: {src or '<empty>'}")
+
+    sections = re.findall(
+        r'<section\s+class="card"[^>]*>(.*?)</section>',
+        content,
+        flags=re.IGNORECASE | re.DOTALL,
+    )
+    for idx, sec in enumerate(sections, 1):
+        text = re.sub(r"<[^>]+>", "", sec)
+        text = re.sub(r"\s+", "", text)
+        if len(text) < 12:
+            issues.append(f"Section {idx} appears empty")
 
     return (len(issues) == 0, issues)
 

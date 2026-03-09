@@ -17,6 +17,7 @@ If not configured, provide setup steps first, then proceed.
 Generate a full lecture HTML from templates/lecture-template-en.html with this paper:
 - Keep fixed 9-section structure
 - For each figure, include logic/caption/quote/steps/results blocks
+- Every figure-section must include an <img> tag; if source image fails, keep placeholder image and record attempts in caption-box
 - Preserve quantitative details in caption translation: n, P, fold change, scale bar
 - Use OpenAlex metadata first, then PubMed cross-check for biomedical papers
 
@@ -25,6 +26,10 @@ Output filename: lecture_<topic>_<PMID>.html
 
 Validation step (recommended):
 bash tools/check_template_consistency.sh lecture_<topic>_<PMID>.html lecture-en
+
+Self-repair loop (max 3 rounds):
+- if checker fails, patch only missing blocks / empty sections / missing images
+- re-run checker after each patch
 ```
 
 ## Prompt 2: improve an existing lecture file

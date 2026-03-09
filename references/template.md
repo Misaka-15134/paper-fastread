@@ -4,16 +4,16 @@
 
 - 基准文件：`templates/lecture-template.html`
 - 来源：`讲义2_多组学光老化_PMID34241612.html`
-- 要求：后续生成讲义时，保持该模板的版式风格与信息层级（卡片、figure-section、caption-box、purpose/steps/results结构）。
+- 要求：后续生成讲义时，保持该模板的版式风格与信息层级（卡片、figure-section、logic/caption/quote/steps/results结构）。
 
 ### 讲义内容骨架（9章节）
 
 1. 论文概览卡片
-2. 研究逻辑流程图
+2. 研究逻辑与故事主线
 3. 引言导读（原文引用+中文解读）
 4. 摘要精读
-5. Figure逐图解读（完整结构）
-6. 方法学深度解析
+5. Figure逐图精读与逻辑串联
+6. 核心方法学精读
 7. 方法学批判
 8. 讨论导读
 9. 课堂讨论题
@@ -22,9 +22,10 @@
 
 - 原文图注（英文）
 - 中文翻译（完整参数）
-- purpose-box（为什么做）
+- logic-box（为什么接着做）
+- quote-box（Results原文提取）
 - steps-box（怎么做）
-- results-box（核心发现+panel-details+逻辑链+机制意义）
+- results-box（核心发现+panel-details+阶段性结论）
 
 ## B. 文献计量模板（强制基准）
 

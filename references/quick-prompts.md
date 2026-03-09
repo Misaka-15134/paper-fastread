@@ -17,11 +17,16 @@
 请基于 templates/lecture-template.html 生成这篇论文的完整讲义HTML：
 - 必须保留模板主结构（9章节 + Figure完整结构）
 - Figure必须包含：logic-box + caption-box + quote-box + steps-box + results-box(panel-details)
+- 每个figure-section都必须有<img>；若图源失败，使用占位图并在caption-box记录失败原因
 - 图注中文翻译必须完整包含 n值、P值、比例尺、剂量、时间点
 - 默认先用 OpenAlex 获取元数据，再用 PubMed（医学场景）交叉核验
 
 论文来源：{PDF/HTML/URL/PMID/DOI}
 输出文件名：讲义_<主题>_<PMID>.html
+
+生成后强制校验并自修复（最多3轮）：
+- bash tools/check_template_consistency.sh 讲义_<主题>_<PMID>.html lecture
+- 若失败：仅修复缺失区块/空区块/空图片，重跑校验
 ```
 
 ## Prompt 2：已有讲义深度补齐（不改风格）

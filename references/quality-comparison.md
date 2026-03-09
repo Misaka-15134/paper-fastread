@@ -1,5 +1,12 @@
 # 讲义质量对比指南
 
+> ⚠️ 术语更新说明（重要）
+> 
+> 本文部分历史示例仍使用 `purpose-box`。当前正式规范请以 `SKILL.md` 与 `single-paper-lecture-template-zh.md` 为准：
+> `logic-box → image → caption-box → quote-box → steps-box → results-box`。
+> 
+> 若使用旧示例，请将 `purpose-box` 语义迁移到 `logic-box`，并补齐 `quote-box`（Results 连续原文）。
+
 ## 目的
 
 本文档通过对比`讲义2`（高质量范例）与常见不足案例，帮助理解skill的输出标准。

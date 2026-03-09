@@ -222,6 +222,8 @@ paper-fastread/
 - 文献源配置（EN）：`references/literature-source-setup-en.md`
 - MCP 搜索与取图流程：`references/paper-distill-mcp-workflow.md`
 - MCP 搜索与取图流程（EN）：`references/paper-distill-mcp-workflow-en.md`
+- 代理稳定性协议：`references/agent-reliability-protocol.md`
+- 代理稳定性协议（EN）：`references/agent-reliability-protocol-en.md`
 - 单篇讲义规范：`references/single-paper-lecture-template-zh.md`
 - 单篇讲义规范（EN）：`references/single-paper-lecture-template-en.md`
 - 快速 prompts：`references/quick-prompts.md`
