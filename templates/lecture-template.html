@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Single Paper Lecture Template</title>
+  <style>
+    body { font-family: "Segoe UI", "PingFang SC", Arial, sans-serif; margin: 0; background: #f8fafc; color: #0f172a; }
+    .container { max-width: 1080px; margin: 0 auto; padding: 24px; }
+    .card { background: #fff; border-radius: 12px; padding: 20px; margin: 16px 0; border: 1px solid #e2e8f0; }
+    h1, h2, h3, h4 { margin-top: 0; }
+    .figure-section { border: 1px solid #e2e8f0; border-radius: 10px; padding: 16px; margin: 14px 0; background: #ffffff; }
+    .fig-img { width: 100%; border-radius: 8px; border: 1px solid #cbd5e1; margin: 8px 0 12px; }
+
+    .logic-box {
+      border-left: 4px solid #0891b2;
+      background: #ecfeff;
+      padding: 12px 16px;
+      border-radius: 8px;
+      margin: 10px 0 20px 0;
+    }
+    .logic-box h4 { color: #0891b2; margin-bottom: 8px; font-size: 16px; }
+
+    .caption-box {
+      border-left: 4px solid #2563eb;
+      background: #eff6ff;
+      padding: 12px 16px;
+      border-radius: 8px;
+      margin: 10px 0;
+    }
+
+    .quote-box {
+      border-left: 4px solid #3b82f6;
+      background: #eff6ff;
+      padding: 16px 20px;
+      border-radius: 8px;
+      margin: 16px 0;
+    }
+    .quote-box h4 { color: #1d4ed8; margin-bottom: 10px; font-size: 16px; }
+    .quote-box p { margin: 8px 0; }
+
+    .steps-box {
+      border-left: 4px solid #7c3aed;
+      background: #f5f3ff;
+      padding: 12px 16px;
+      border-radius: 8px;
+      margin: 10px 0;
+    }
+
+    .results-box {
+      border-left: 4px solid #059669;
+      background: #ecfdf5;
+      padding: 12px 16px;
+      border-radius: 8px;
+      margin: 10px 0;
+    }
+    .panel-details { margin: 12px 0; padding-left: 8px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="card">
+      <h1>单篇论文讲义（模板）</h1>
+    </header>
+
+    <section class="card"><h2>1. 论文概览卡片</h2></section>
+    <section class="card"><h2>2. 研究逻辑与故事主线</h2></section>
+    <section class="card"><h2>3. 引言导读</h2></section>
+    <section class="card"><h2>4. 摘要精读</h2></section>
+
+    <section class="card">
+      <h2>5. Figure逐图精读与逻辑串联</h2>
+
+      <div class="figure-section">
+        <h3>Figure 1: [图表主旨标题]</h3>
+        <div class="logic-box">
+          <h4>🔗 研究逻辑链条：</h4>
+          <p><strong>承上启下：</strong>[图A之后为何进入图B]</p>
+        </div>
+        <img class="fig-img" src="https://placehold.co/1200x700" alt="Figure 1" />
+        <div class="caption-box">
+          <p><strong>原文图注：</strong>[完整英文图注]</p>
+          <p><strong>中文翻译：</strong>[包含 n=、P<、fold change、scale bar]</p>
+        </div>
+        <div class="quote-box">
+          <h4>📝 Results 原文精读：</h4>
+          <p><strong>相关原文提取：</strong><em>"[Results连续3-5句英文原文]"</em></p>
+          <p><strong>数据推导解读：</strong>[数据如何支撑结论]</p>
+        </div>
+        <div class="steps-box">
+          <h4>🔬 实验细节拆解：</h4>
+          <ol>
+            <li><strong>样本准备与分组：</strong>[n=]</li>
+            <li><strong>处理条件：</strong>[剂量/时间点]</li>
+            <li><strong>检测指标：</strong>[技术与探针]</li>
+          </ol>
+        </div>
+        <div class="results-box">
+          <h4>📊 结果梳理与小结：</h4>
+          <div class="panel-details">
+            <p>Panel A-B：[结果+显著性]</p>
+            <p>Panel C-D：[结果+倍数变化]</p>
+          </div>
+          <p><strong>本节阶段性结论：</strong>[过渡到下一图]</p>
+        </div>
+      </div>
+
+      <div class="figure-section">
+        <h3>Figure 2: [图表主旨标题]</h3>
+        <div class="logic-box"><h4>🔗 研究逻辑链条：</h4><p><strong>承上启下：</strong>[逻辑承接]</p></div>
+        <img class="fig-img" src="https://placehold.co/1200x700" alt="Figure 2" />
+        <div class="caption-box"><p><strong>原文图注：</strong>[完整英文图注]</p><p><strong>中文翻译：</strong>[n=, P<, fold, bar]</p></div>
+        <div class="quote-box"><h4>📝 Results 原文精读：</h4><p><strong>相关原文提取：</strong><em>"[3-5句]"</em></p><p><strong>数据推导解读：</strong>[解读]</p></div>
+        <div class="steps-box"><h4>🔬 实验细节拆解：</h4><ol><li><strong>样本准备与分组：</strong>[n=]</li><li><strong>处理条件：</strong>[参数]</li><li><strong>检测指标：</strong>[指标]</li></ol></div>
+        <div class="results-box"><h4>📊 结果梳理与小结：</h4><div class="panel-details"><p>Panel A-B：[结果]</p><p>Panel C-D：[结果]</p></div><p><strong>本节阶段性结论：</strong>[结论]</p></div>
+      </div>
+
+      <div class="figure-section">
+        <h3>Figure 3: [图表主旨标题]</h3>
+        <div class="logic-box"><h4>🔗 研究逻辑链条：</h4><p><strong>承上启下：</strong>[逻辑承接]</p></div>
+        <img class="fig-img" src="https://placehold.co/1200x700" alt="Figure 3" />
+        <div class="caption-box"><p><strong>原文图注：</strong>[完整英文图注]</p><p><strong>中文翻译：</strong>[n=, P<, fold, bar]</p></div>
+        <div class="quote-box"><h4>📝 Results 原文精读：</h4><p><strong>相关原文提取：</strong><em>"[3-5句]"</em></p><p><strong>数据推导解读：</strong>[解读]</p></div>
+        <div class="steps-box"><h4>🔬 实验细节拆解：</h4><ol><li><strong>样本准备与分组：</strong>[n=]</li><li><strong>处理条件：</strong>[参数]</li><li><strong>检测指标：</strong>[指标]</li></ol></div>
+        <div class="results-box"><h4>📊 结果梳理与小结：</h4><div class="panel-details"><p>Panel A-B：[结果]</p><p>Panel C-D：[结果]</p></div><p><strong>本节阶段性结论：</strong>[结论]</p></div>
+      </div>
+    </section>
+
+    <section class="card"><h2>6. 核心方法学精读</h2></section>
+    <section class="card"><h2>7. 方法学批判</h2></section>
+    <section class="card"><h2>8. 讨论导读</h2></section>
+    <section class="card"><h2>9. 课堂讨论题</h2></section>
+  </div>
+</body>
+</html>
