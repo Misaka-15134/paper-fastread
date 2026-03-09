@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Figure Module Demo</title>
+  <style>
+    body { font-family: "Segoe UI", "PingFang SC", Arial, sans-serif; margin: 0; background: #f8fafc; color: #0f172a; }
+    .container { max-width: 1080px; margin: 0 auto; padding: 20px; }
+    .figure-section { background: #fff; border: 1px solid #dbeafe; border-radius: 10px; padding: 14px; }
+    .fig-img { width: 100%; border-radius: 8px; border: 1px solid #cbd5e1; }
+    .logic-box { border-left: 4px solid #0891b2; background: #ecfeff; padding: 10px 14px; border-radius: 8px; margin: 8px 0 14px; }
+    .caption-box { border-left: 4px solid #2563eb; background: #eff6ff; padding: 10px 14px; border-radius: 8px; margin: 8px 0; }
+    .quote-box { border-left: 4px solid #3b82f6; background: #eff6ff; padding: 12px 14px; border-radius: 8px; margin: 10px 0; }
+    .steps-box { border-left: 4px solid #7c3aed; background: #f5f3ff; padding: 10px 14px; border-radius: 8px; margin: 8px 0; }
+    .results-box { border-left: 4px solid #059669; background: #ecfdf5; padding: 10px 14px; border-radius: 8px; margin: 8px 0; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="figure-section">
+      <h2>Figure 精读模块 Demo</h2>
+      <div class="logic-box"><strong>logic-box：</strong>说明图A到图B的逻辑承接。</div>
+      <img class="fig-img" src="https://cdn.ncbi.nlm.nih.gov/pmc/blobs/7d41/12766209/fa0d5c6427c0/gr3.jpg" alt="Figure 3" />
+      <div class="caption-box"><strong>caption-box：</strong>原文图注 + 中文翻译（保留 n/P/fold/scale）。</div>
+      <div class="quote-box"><strong>quote-box：</strong>Results 连续 3-5 句原文与推导。</div>
+      <div class="steps-box"><strong>steps-box：</strong>样本、处理条件、检测指标。</div>
+      <div class="results-box"><strong>results-box：</strong>Panel 级解读与阶段性结论。</div>
+    </div>
+  </div>
+</body>
+</html>

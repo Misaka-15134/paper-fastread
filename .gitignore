@@ -1,0 +1,15 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Build artifacts
+dist/*.skill
+
+# Temp and logs
+*.log
+tmp/
+temp/
