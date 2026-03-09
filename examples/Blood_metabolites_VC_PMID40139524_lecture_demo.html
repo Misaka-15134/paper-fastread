@@ -3,42 +3,287 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Demo Lecture - PMID40139524</title>
+  <title>讲义示例：Blood metabolites mediate causal inference studies... (PMID40139524)</title>
   <style>
     body { font-family: "Segoe UI", "PingFang SC", Arial, sans-serif; margin: 0; background: #f8fafc; color: #0f172a; }
-    .container { max-width: 1080px; margin: 0 auto; padding: 20px; }
-    .card { background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 18px; margin: 12px 0; }
-    .figure-section { border: 1px solid #dbeafe; border-radius: 10px; padding: 14px; margin: 14px 0; }
-    .fig-img { width: 100%; border-radius: 8px; border: 1px solid #cbd5e1; }
-    .logic-box { border-left: 4px solid #0891b2; background: #ecfeff; padding: 10px 14px; border-radius: 8px; margin: 8px 0 14px; }
-    .caption-box { border-left: 4px solid #2563eb; background: #eff6ff; padding: 10px 14px; border-radius: 8px; margin: 8px 0; }
-    .quote-box { border-left: 4px solid #3b82f6; background: #eff6ff; padding: 12px 14px; border-radius: 8px; margin: 10px 0; }
-    .steps-box { border-left: 4px solid #7c3aed; background: #f5f3ff; padding: 10px 14px; border-radius: 8px; margin: 8px 0; }
-    .results-box { border-left: 4px solid #059669; background: #ecfdf5; padding: 10px 14px; border-radius: 8px; margin: 8px 0; }
+    .container { max-width: 1120px; margin: 0 auto; padding: 24px; }
+    .card { background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 20px; margin: 14px 0; }
+    h1,h2,h3,h4 { margin-top: 0; }
+    .meta-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+    .meta-item { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 10px; }
+    .figure-section { border: 1px solid #dbeafe; border-radius: 10px; padding: 16px; margin: 16px 0; }
+    .fig-img { width: 100%; border-radius: 8px; border: 1px solid #cbd5e1; cursor: zoom-in; }
+    .caption-box { border-left: 4px solid #2563eb; background: #eff6ff; padding: 12px 16px; border-radius: 8px; margin: 10px 0; }
+    .steps-box { border-left: 4px solid #7c3aed; background: #f5f3ff; padding: 12px 16px; border-radius: 8px; margin: 10px 0; }
+    .results-box { border-left: 4px solid #059669; background: #ecfdf5; padding: 12px 16px; border-radius: 8px; margin: 10px 0; }
+    .logic-box { border-left: 4px solid #0891b2; background: #ecfeff; padding: 12px 16px; border-radius: 8px; margin: 10px 0 20px 0; }
+    .logic-box h4 { color: #0891b2; margin-bottom: 8px; font-size: 16px; }
+    .quote-box { border-left: 4px solid #3b82f6; background: #eff6ff; padding: 16px 20px; border-radius: 8px; margin: 16px 0; }
+    .quote-box h4 { color: #1d4ed8; margin-bottom: 10px; font-size: 16px; }
+    .quote-box p { margin: 8px 0; }
+    .panel-details p { margin: 8px 0; }
+    .kpi { font-weight: 700; color: #0f766e; }
+    .warning { color: #92400e; background: #fffbeb; border: 1px solid #fde68a; border-radius: 8px; padding: 8px 10px; }
+    .modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.72); align-items: center; justify-content: center; }
+    .modal img { max-width: 92vw; max-height: 90vh; border-radius: 8px; }
   </style>
 </head>
 <body>
   <div class="container">
     <section class="card">
-      <h1>讲义 Demo：肠道菌群-代谢物-血管钙化（PMID40139524）</h1>
-      <p>该示例用于 README 展示截图，结构遵循 paper-fastread 的 9 章节与 Figure 强制区块规范。</p>
+      <h1>Blood metabolites mediate causal inference studies on the effect of gut microbiota on the risk of vascular calcification</h1>
+      <p>示例定位：严格按 <code>paper-fastread</code> 技能规范生成的“单篇论文课堂讲义”演示版（9章节 + Figure 强制结构 + 参数保真）。</p>
     </section>
 
-    <section class="card"><h2>1. 论文概览卡片</h2><p>J Adv Res, DOI:10.1016/j.jare.2025.03.038, PMID:40139524</p></section>
-    <section class="card"><h2>2. 研究逻辑与故事主线</h2><p>双向 MR → 中介 MR → 临床样本验证 → 细胞实验验证。</p></section>
-
-    <section class="card">
-      <h2>5. Figure逐图精读与逻辑串联（示例）</h2>
-      <div class="figure-section">
-        <h3>Figure 3: Blood metabolites ↔ VC</h3>
-        <div class="logic-box"><strong>承上启下：</strong>在菌群与VC因果耦合已确立后，进入代谢层识别可解释中介。</div>
-        <img class="fig-img" src="https://cdn.ncbi.nlm.nih.gov/pmc/blobs/7d41/12766209/fa0d5c6427c0/gr3.jpg" alt="Figure 3" />
-        <div class="caption-box"><strong>中文翻译要点：</strong>保留 n= / P&lt; / fold change / scale bar（若图注提供）。</div>
-        <div class="quote-box"><strong>Results 原文精读：</strong>连续 3-5 句英文原文 + 数据推导解读。</div>
-        <div class="steps-box"><strong>实验细节拆解：</strong>样本分组、处理条件、检测指标。</div>
-        <div class="results-box"><strong>阶段性结论：</strong>定位 methionine/phosphate ratio 作为关键中介候选。</div>
+    <section class="card" id="chapter1">
+      <h2>1. 论文概览卡片</h2>
+      <div class="meta-grid">
+        <div class="meta-item"><strong>期刊</strong><br/>Journal of Advanced Research (J Adv Res)</div>
+        <div class="meta-item"><strong>时间与卷期</strong><br/>2025 Mar 24; 79:619–631</div>
+        <div class="meta-item"><strong>PMID / PMCID</strong><br/>40139524 / PMC12766209</div>
+        <div class="meta-item"><strong>DOI</strong><br/>10.1016/j.jare.2025.03.038</div>
+        <div class="meta-item"><strong>主要作者</strong><br/>Aoran Huang, Jianshuai Ma, Huijin Zhu, Yanli Qi, Yang Jin, et al.</div>
+        <div class="meta-item"><strong>核心命题</strong><br/>肠道菌群是否通过血液代谢物（尤其 methionine/phosphate ratio）因果性影响血管钙化（VC）风险。</div>
       </div>
     </section>
+
+    <section class="card" id="chapter2">
+      <h2>2. 研究逻辑与故事主线</h2>
+      <ol>
+        <li><strong>第一跳（因果方向）</strong>：双向 MR 分别回答 <em>gut microbiota ↔ VC</em> 与 <em>blood metabolites ↔ VC</em>。</li>
+        <li><strong>第二跳（中介路径）</strong>：中介 MR 把“菌群层”和“代谢物层”串联，判断是否存在可解释桥梁。</li>
+        <li><strong>第三跳（临床可见）</strong>：在健康人/CKD 人群中做 LC-MS/MS 与 CT VC score 相关性验证。</li>
+        <li><strong>第四跳（功能验证）</strong>：VSMC 体外钙化模型验证关键中介分子方向性（蛋氨酸抑制钙化）。</li>
+      </ol>
+      <p><strong>故事主线一句话：</strong>从统计因果信号出发，逐步收敛到“g_KLE1615 → methionine/phosphate ratio → VC”的可解释机制支路，并用临床与细胞证据加固可信度。</p>
+    </section>
+
+    <section class="card" id="chapter3">
+      <h2>3. 引言导读（2-3段原文 + 中文解读）</h2>
+      <div class="quote-box">
+        <h4>原文段 1</h4>
+        <p><em>“Vascular Calcification (VC) is a dynamic and controlled process that resembles bone formation... effective pharmacological interventions for VC remain elusive...”</em></p>
+      </div>
+      <p>中文解读：作者先把 VC 定义为“主动、可调控”的类成骨过程，而非被动沉积；同时点明临床缺药，研究价值直接落在“机制可干预靶点”。</p>
+
+      <div class="quote-box">
+        <h4>原文段 2</h4>
+        <p><em>“Although increasing evidence connects GM to VC, the precise causal relationship and the underlying mechanisms continue to be unclear.”</em></p>
+      </div>
+      <p>中文解读：目前多为相关性研究，最核心缺口是“方向性因果”与“可解释中介”。本文正是以 MR + mediation MR 去补这两块。</p>
+
+      <div class="quote-box">
+        <h4>原文段 3</h4>
+        <p><em>“Through bi-directional MR and mediation analyses, we aim to elucidate the complex interplay between these variables.”</em></p>
+      </div>
+      <p>中文解读：方法学框架天然指向分层推理：先方向，再桥梁，再验证，而不是一次性给结论。</p>
+    </section>
+
+    <section class="card" id="chapter4">
+      <h2>4. 摘要精读（逐句拆解）</h2>
+      <p><strong>Background：</strong>菌群与 VC 有关，但“菌群影响 VC 是否通过代谢物中介”尚不清楚。</p>
+      <p><strong>Methods：</strong>最大规模相关 GWAS + 双向两样本 MR + 中介分析 + CKD 人群质谱/CT + VSMC 功能实验。</p>
+      <p><strong>Results：</strong><span class="kpi">19</span> 个菌群与 VC 因果相关，<span class="kpi">52</span> 个代谢物与 VC 因果相关；发现 g_KLE1615 通过下调 methionine/phosphate ratio 促进 VC（中介占比 <span class="kpi">14.7%</span>，P=<span class="kpi">0.039</span>）。</p>
+      <p><strong>Conclusion：</strong>提供了“microbiome-metabolome”联合干预 VC 的因果证据框架。</p>
+    </section>
+
+    <section class="card" id="chapter5">
+      <h2>5. Figure逐图精读与逻辑串联</h2>
+
+      <div class="figure-section" id="fig1">
+        <h3>Figure 1: Study overview（研究总览）</h3>
+        <div class="logic-box">
+          <h4>🔗 研究逻辑链条：</h4>
+          <p><strong>承上启下：</strong>引言提出“因果与机制缺口”后，本图先搭建从统计到生物学验证的五步闭环，避免只停留在关联层。它告诉读者：后续每张图都在这个闭环中的哪个环节发力。</p>
+        </div>
+        <img src="https://cdn.ncbi.nlm.nih.gov/pmc/blobs/7d41/12766209/a7ff081a1b8e/gr1.jpg" class="fig-img" onclick="openModal(this.src)" alt="Figure 1" />
+        <div class="caption-box">
+          <p><strong>原文图注：</strong>“Study overview. Step 1A illustrates the causal effects of gut microbiota on Vascular Calcification (VC), while Step 1B depicts the causal effects of VC on gut microbiota. Step 2A details the causal relationship of blood metabolites with VC, and Step 2B demonstrates the impact of blood metabolites on VC. Step 3 involves the mediating analysis ... Step 4 covers the detection of blood metabolites ... Step 5: CT imaging ... Finally, experimental validation...”</p>
+          <p><strong>中文翻译：</strong>研究总览：Step1 和 Step2 分别评估菌群/代谢物与 VC 的双向因果；Step3 做中介分析；Step4 用 LC-MS/MS 比较健康与 CKD 代谢物；Step5 用 CT 计算 VC score 并与代谢物做相关，最后进入实验验证。<strong>参数说明：</strong>该图为流程示意图，图注未给出 n 值、比例尺与 fold change；定量结果在后续结果图中给出。</p>
+        </div>
+        <div class="quote-box">
+          <h4>📝 Results 原文精读：</h4>
+          <p><strong>相关原文提取：</strong><em>“We identified 19 positive gut microbiota species and 52 positive blood metabolites with causal effects on VC. ... Mediation analysis suggests that the gut microbiota g_KLE1615 promotes VC by downregulating the methionine-to-phosphate ratio. ... Further in vitro experiments confirmed the inhibitory effect of the intermediate metabolite methionine on VC.”</em></p>
+          <p><strong>数据推导解读：</strong>图1对应的是“证据链路图”，其价值在于把散乱结果组织为“因果方向→中介桥梁→临床可见→功能验证”的可审计路径，降低过度解释风险。</p>
+        </div>
+        <div class="steps-box">
+          <h4>🔬 实验细节拆解：</h4>
+          <ol>
+            <li><strong>样本准备与分组：</strong>汇总统计层（菌群GWAS/代谢物GWAS/VC GWAS）+ 临床层（58 健康、53 CKD）。</li>
+            <li><strong>处理条件：</strong>双向 MR（IVW + 多方法一致性）→ mediation MR（a/b/c路径）→ 体外钙化诱导（2.6 mmol/L phosphate，7天）。</li>
+            <li><strong>检测指标：</strong>OR、95%CI、p-FDR、VC score（CT）、代谢物丰度（LC-MS/MS）、钙化染色与钙含量。</li>
+          </ol>
+        </div>
+        <div class="results-box">
+          <h4>📊 结果梳理与小结：</h4>
+          <div class="panel-details">
+            <p>Panel A-B（统计因果层）：先建立方向性而非单点相关。</p>
+            <p>Panel C-D（中介与验证层）：把机制候选收敛到可实验测试的代谢节点。</p>
+          </div>
+          <p><strong>本节阶段性结论：</strong>Figure 1 将整篇文章从“发现型”变成“可复核型”，为 Figure 2-4 的逐层证据提供路线图。</p>
+        </div>
+      </div>
+
+      <div class="figure-section" id="fig2">
+        <h3>Figure 2: Causal links between gut microbiota and VC</h3>
+        <div class="logic-box">
+          <h4>🔗 研究逻辑链条：</h4>
+          <p><strong>承上启下：</strong>总览框架确定后，第一层必须先回答“菌群与VC是否具备双向因果”。如果方向性不成立，后续中介分析没有意义。</p>
+        </div>
+        <img src="https://cdn.ncbi.nlm.nih.gov/pmc/blobs/7d41/12766209/09b859927894/gr2.jpg" class="fig-img" onclick="openModal(this.src)" alt="Figure 2" />
+        <div class="caption-box">
+          <p><strong>原文图注：</strong>“Mendelian random analysis showed a causal relationship between gut microbiota and Vascular Calcification (VC). (A) Causal effects of gut microbiota on VC. (B) Causal effects of VC on the gut microbiota.”</p>
+          <p><strong>中文翻译：</strong>MR 结果显示菌群与 VC 存在因果关系：A 为菌群对 VC 的因果效应，B 为 VC 对菌群的反向因果效应。<strong>参数说明：</strong>图注未给 n 与比例尺；本图关键定量在正文 Results 中以 OR/95%CI/p-FDR 给出。</p>
+        </div>
+        <div class="quote-box">
+          <h4>📝 Results 原文精读：</h4>
+          <p><strong>相关原文提取：</strong><em>“We identified 19 species of gut microbiota linked to VC... 8 species were positively correlated with VC, with the most influential being g_Herbidospora (OR = 1.332, 95 % CI = 1.053–1.684, p-FDR = 0.017). Conversely, 11 species were negatively correlated, with the most significant being o_Bacillales_A (OR = 0.557, 95 % CI = 0.332–0.937, p-FDR = 0.027). ... VC induced changes in the abundance of 24 gut microbiota species.”</em></p>
+          <p><strong>数据推导解读：</strong>该图明确“不是单向驱动”：菌群可影响 VC 风险，同时 VC 也会重塑菌群生态。这种双向耦合解释了为何仅凭横断面数据容易得出偏结论。</p>
+        </div>
+        <div class="steps-box">
+          <h4>🔬 实验细节拆解：</h4>
+          <ol>
+            <li><strong>样本准备与分组：</strong>FINRISK 2002 菌群 GWAS（n=5,959）与 VC GWAS（n=26,909，欧洲人群）。</li>
+            <li><strong>处理条件：</strong>菌群 SNP 阈值 P&lt;5×10^-5，LD r²&lt;0.001，距离 10,000 kb，F&gt;10。</li>
+            <li><strong>检测指标：</strong>IVW 主分析 + MR-Egger/Weighted median/mode 一致性；敏感性分析检查异质性与多效性。</li>
+          </ol>
+        </div>
+        <div class="results-box">
+          <h4>📊 结果梳理与小结：</h4>
+          <div class="panel-details">
+            <p>Panel A-B（菌群→VC）：识别 19 个因果相关菌群，且方向正负并存。</p>
+            <p>Panel C-D（VC→菌群）：VC 可反向影响 24 个菌群丰度，提示疾病状态可反馈塑形微生态。</p>
+          </div>
+          <p><strong>本节阶段性结论：</strong>Figure 2 证明“方向性存在且双向”，为代谢中介层（Figure 3/4）提供必要前提。</p>
+        </div>
+      </div>
+
+      <div class="figure-section" id="fig3">
+        <h3>Figure 3: Causal links between blood metabolites and VC</h3>
+        <div class="logic-box">
+          <h4>🔗 研究逻辑链条：</h4>
+          <p><strong>承上启下：</strong>既然菌群与VC有双向因果，下一步必须找到“可测可干预”的中介层。Figure 3 把焦点转到血液代谢物。</p>
+        </div>
+        <img src="https://cdn.ncbi.nlm.nih.gov/pmc/blobs/7d41/12766209/fa0d5c6427c0/gr3.jpg" class="fig-img" onclick="openModal(this.src)" alt="Figure 3" />
+        <div class="caption-box">
+          <p><strong>原文图注：</strong>“Mendelian randomized analysis showed a causal relationship between blood metabolites and VC. (A) Causal effects of blood metabolites on VC. (B) Causal effects of VC on blood metabolites. GPE... CEHC... GPI...”</p>
+          <p><strong>中文翻译：</strong>MR 显示血液代谢物与 VC 存在双向因果关系：A 为代谢物对 VC 的效应，B 为 VC 对代谢物的反向效应。缩写包括 GPE、CEHC、GPI。<strong>参数说明：</strong>图注未给 n 与 scale bar；核心量化来自正文 OR、95%CI 与 p-FDR。</p>
+        </div>
+        <div class="quote-box">
+          <h4>📝 Results 原文精读：</h4>
+          <p><strong>相关原文提取：</strong><em>“The MR results identified 52 metabolites linked to the advancement of VC... Isoleucine levels were the most significant positive contributor (OR = 1.284, 95 % CI = 1.123–1.466, p-FDR = 0.000), while the Methionine to phosphate ratio showed the largest negative effect (OR = 0.768, 95 % CI = 0.629–0.937, p-FDR = 0.009). Additionally, VC was associated with changes in the abundance of 56 blood metabolites...”</em></p>
+          <p><strong>数据推导解读：</strong>Figure 3 给出中介层“候选池”：既有风险促进代谢物，也有保护性代谢指标。methionine/phosphate ratio 的显著保护效应，为 Figure 4 的中介闭环埋下关键锚点。</p>
+        </div>
+        <div class="steps-box">
+          <h4>🔬 实验细节拆解：</h4>
+          <ol>
+            <li><strong>样本准备与分组：</strong>CLSA 代谢组 GWAS（8,299）与 VC GWAS（26,909）。</li>
+            <li><strong>处理条件：</strong>代谢物 SNP 阈值 P&lt;1×10^-5；多方法 MR + FDR 校正（p-FDR&lt;0.05）。</li>
+            <li><strong>检测指标：</strong>OR、95%CI、p-FDR；通路富集（支链氨基酸代谢、甲硫氨酸代谢等）。</li>
+          </ol>
+        </div>
+        <div class="results-box">
+          <h4>📊 结果梳理与小结：</h4>
+          <div class="panel-details">
+            <p>Panel A-B（代谢物→VC）：共 52 个代谢物因果关联（22 正向、30 负向）。</p>
+            <p>Panel C-D（VC→代谢物）：VC 反向影响 56 个代谢物丰度，构成“疾病-代谢反馈回路”。</p>
+          </div>
+          <p><strong>本节阶段性结论：</strong>Figure 3 将机制问题从“菌群很复杂”收敛到“可量化代谢通路”，为中介建模提供直接输入。</p>
+        </div>
+      </div>
+
+      <div class="figure-section" id="fig4">
+        <h3>Figure 4: Mediation MR pinpoints methionine/phosphate pathway</h3>
+        <div class="logic-box">
+          <h4>🔗 研究逻辑链条：</h4>
+          <p><strong>承上启下：</strong>Figure 2 和 Figure 3 已分别证明上游与中层的因果关系，Figure 4 用中介 MR 回答“真正传递效应的是谁”。</p>
+        </div>
+        <img src="https://cdn.ncbi.nlm.nih.gov/pmc/blobs/7d41/12766209/1e29210484b8/gr4.jpg" class="fig-img" onclick="openModal(this.src)" alt="Figure 4" />
+        <div class="caption-box">
+          <p><strong>原文图注：</strong>“...The ratio of methionine to phosphate partially mediated the effect of the gut microbiota g_KLE1615 on VC, with the mediation effect accounting for 14.7 %, P = 0.039.”</p>
+          <p><strong>中文翻译：</strong>蛋氨酸/磷酸盐比值可部分中介 g_KLE1615 对 VC 的效应，中介占比为 <strong>14.7%</strong>，且 <strong>P=0.039</strong>。<strong>参数说明：</strong>本图属于统计路径图，未提供 n 与比例尺；核心量化为中介比例与 P 值。</p>
+        </div>
+        <div class="quote-box">
+          <h4>📝 Results 原文精读：</h4>
+          <p><strong>相关原文提取：</strong><em>“...13 of the microbiota modulate the levels of 20 different metabolites... We calculated the intermediary effects and proportions and found that the Methionine to phosphate ratio plays a significant mediating role... g_KLE1615 can promote the progression of VC by downregulating the methionine to phosphate ratio, with a mediation proportion of 14.7 % (p = 0.039).”</em></p>
+          <p><strong>数据推导解读：</strong>中介比例不是“全部机制”，但足以证明这条通路是可解释、可实验干预的实质链路。其临床意义在于：可将复杂菌群效应投影到一个可测代谢比值上。</p>
+        </div>
+        <div class="steps-box">
+          <h4>🔬 实验细节拆解：</h4>
+          <ol>
+            <li><strong>样本准备与分组：</strong>从“菌群→VC”与“代谢物→VC”显著集合中筛候选路径。</li>
+            <li><strong>处理条件：</strong>估计总效应 c、菌群→代谢物效应 a、代谢物→VC 效应 b，再算 a×b 与比例 (a×b)/c。</li>
+            <li><strong>检测指标：</strong>中介效应大小、置信区间、P 值、以及多效性/异质性敏感性检查。</li>
+          </ol>
+        </div>
+        <div class="results-box">
+          <h4>📊 结果梳理与小结：</h4>
+          <div class="panel-details">
+            <p>Panel A-B（菌群→代谢物）：13 个菌群可调控 20 个代谢物，建立中介候选网络。</p>
+            <p>Panel C-D（中介路径）：g_KLE1615 通过 methionine/phosphate ratio 促进 VC，14.7%（P=0.039）。</p>
+          </div>
+          <p><strong>本节阶段性结论：</strong>Figure 4 是全篇机制闭环关键节点，直接指导后续临床转化与功能实验优先级。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card" id="chapter6">
+      <h2>6. 核心方法学精读（Methods Deep Dive）</h2>
+      <div class="quote-box">
+        <h4>Methods 原文摘录 A（工具变量筛选）</h4>
+        <p><em>“We identified SNPs related to gut microbiota using a significance threshold of P &lt; 5 × 10^-5... For blood metabolites, SNPs were chosen at P &lt; 1 × 10^-5, and for VC... P &lt; 5 × 10^-8... LD r2 = 0.001... distance 10,000 kb... F-statistic exceeding 10.”</em></p>
+      </div>
+      <p>深挖解读：作者根据暴露层的信号密度采用分层阈值，兼顾“发现能力”与“工具强度”，并通过 F&gt;10 控制弱工具偏倚。这是 MR 可解释性的底座。</p>
+
+      <div class="quote-box">
+        <h4>Methods 原文摘录 B（中介分析）</h4>
+        <p><em>“...quantify the overall impact (c)... evaluate effect (a)... assess effect (b)... calculate mediation effect (axb), direct effect (c − axb), and mediation proportion ([axb]/c)...”</em></p>
+      </div>
+      <p>深挖解读：这一步把“菌群影响VC”拆成“直接效应 + 通过代谢物的间接效应”。其优势是可解释性强；局限是对模型假设敏感，且中介比例不能被误读为全部生物机制。</p>
+    </section>
+
+    <section class="card" id="chapter7">
+      <h2>7. 方法学批判</h2>
+      <ul>
+        <li><strong>样本与泛化：</strong>GWAS 多为欧洲祖源，临床验证为单中心 CKD 人群，跨人群泛化仍需多中心复核。</li>
+        <li><strong>统计假设：</strong>尽管做了多方法一致性与敏感性分析，复杂菌群 trait 的残余多效性仍无法完全排除。</li>
+        <li><strong>验证深度：</strong>细胞实验验证了蛋氨酸方向性，但“操控 g_KLE1615 → 代谢比值 → VC”全链条体内因果仍待补证。</li>
+        <li><strong>转化间隙：</strong>中介占比 14.7% 说明关键但非唯一通路，临床干预更可能是多靶点联合而非单通路押注。</li>
+      </ul>
+    </section>
+
+    <section class="card" id="chapter8">
+      <h2>8. 讨论导读（关键原文 + 中文解读）</h2>
+      <div class="quote-box">
+        <h4>关键原文段</h4>
+        <p><em>“Gut microbiota and blood metabolites are causally linked to VC. These findings provide a theoretical basis for microbiome- and metabolome-based therapeutic strategies for targeting VC and enhances our comprehension of the gut-vascular axis.”</em></p>
+      </div>
+      <p>中文解读：文章最重要贡献不是“又发现了几个相关分子”，而是把复杂体系组织成可验证因果路径，给后续机制实验与临床分层提供操作性框架。</p>
+      <p class="warning"><strong>证据透明：</strong>本示例已尽量基于可核验公开文本构建；若用于正式教学稿，建议进一步补充出版社完整 Discussion 原文段落逐段映射。</p>
+    </section>
+
+    <section class="card" id="chapter9">
+      <h2>9. 课堂讨论题（启发性）</h2>
+      <ol>
+        <li>为什么中介比例 14.7% 既“足够重要”又“不能被夸大”为全部机制？</li>
+        <li>如果你要设计动物实验验证 g_KLE1615 通路，首选干预节点是菌群、代谢物还是受体通路？</li>
+        <li>在“VC 反向改变菌群”已成立的情况下，临床治疗先后顺序应如何制定？</li>
+        <li>如何把 OR/CI 层面的因果证据转化为可执行的临床风险分层模型？</li>
+        <li>若不同人群中 methionine/phosphate ratio 方向不一致，你会如何排查偏差来源？</li>
+      </ol>
+    </section>
   </div>
+
+  <div id="imgModal" class="modal" onclick="this.style.display='none'">
+    <img id="modalImg" alt="zoom image" />
+  </div>
+  <script>
+    function openModal(src){
+      const modal = document.getElementById('imgModal');
+      const img = document.getElementById('modalImg');
+      img.src = src;
+      modal.style.display = 'flex';
+    }
+  </script>
 </body>
 </html>

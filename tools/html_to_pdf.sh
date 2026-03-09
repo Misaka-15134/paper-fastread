@@ -20,7 +20,21 @@ fi
 
 ABS_INPUT="$(realpath "$INPUT")"
 ABS_OUTPUT="$(realpath -m "$OUTPUT")"
-FILE_URL="file:///$ABS_INPUT"
+
+TMP_DIR="$(mktemp -d)"
+trap 'rm -rf "$TMP_DIR"' EXIT
+TMP_HTML="$TMP_DIR/input.html"
+cp "$ABS_INPUT" "$TMP_HTML"
+
+if command -v cygpath >/dev/null 2>&1; then
+  INPUT_PATH="$(cygpath -am "$TMP_HTML")"
+  OUTPUT_PATH="$(cygpath -am "$ABS_OUTPUT")"
+  FILE_URL="file:///$INPUT_PATH"
+else
+  INPUT_PATH="$TMP_HTML"
+  OUTPUT_PATH="$ABS_OUTPUT"
+  FILE_URL="file://$INPUT_PATH"
+fi
 
 CHROME=""
 for CANDIDATE in \
@@ -41,10 +55,12 @@ fi
 mkdir -p "$(dirname "$ABS_OUTPUT")"
 
 "$CHROME" \
-  --headless \
+  --headless=old \
   --disable-gpu \
-  --print-to-pdf="$ABS_OUTPUT" \
+  --run-all-compositor-stages-before-draw \
+  --virtual-time-budget=10000 \
+  --print-to-pdf="$OUTPUT_PATH" \
   --no-pdf-header-footer \
   "$FILE_URL"
 
-echo "[OK] PDF generated: $ABS_OUTPUT"
+echo "[OK] PDF generated: $OUTPUT_PATH"
